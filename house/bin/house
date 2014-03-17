@@ -18,4 +18,13 @@ SONG_PARTS =
 		["the house", "that Jack built"],
 	]
 
-puts House.new(SONG_PARTS).sing
+case ARGV[0]
+when "--random"
+	house = HouseRandom.new(SONG_PARTS)
+when "--super"
+	house = HouseSuperRandom.new(SONG_PARTS)
+else
+	house = House.new(SONG_PARTS)
+end
+
+puts house.sing
