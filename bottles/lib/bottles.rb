@@ -18,6 +18,12 @@ class Verse
 	attr_reader :number
 	def initialize number
 		@number = number
+		case number
+		when 1
+			@verse = VerseNum1.new(number)
+		else
+			@verse = VerseNum.new(number)
+		end
 	end
 
 	def to_s
@@ -92,4 +98,16 @@ class Verse
   def liquid
   	"of beer"
   end
+end
+
+class VerseNum
+end
+
+class VerseNum0 < VerseNum
+end
+
+class VerseNum1 < VerseNum
+end
+
+class VerseNum2 < VerseNum
 end
