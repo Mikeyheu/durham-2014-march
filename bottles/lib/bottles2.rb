@@ -80,6 +80,4 @@ class Bottles
   	"of beer"
   end
 
-
-
 end
