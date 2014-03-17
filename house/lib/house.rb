@@ -10,7 +10,7 @@ class House
 	end
 
 	def sing
-		song_parts.length.times.map {|i| verse(i+1)}.join
+		song_parts.length.times.map {|number| verse(number+1)}.join
 	end
 
 end
@@ -23,8 +23,8 @@ end
 
 class HouseSuperRandom < House
 	def initialize song_parts
-		array1 = song_parts.map { |i| i[0] }.shuffle
-		array2 = song_parts.map { |i| i[1] }.shuffle
-		@song_parts = song_parts.length.times.map { |i| [array1[i], array2[i]] }
+		subjects = song_parts.map { |part| part[0] }.shuffle
+		actions = song_parts.map { |part| part[1] }.shuffle
+		@song_parts = song_parts.length.times.map { |i| [subjects[i], actions[i]] }
 	end
 end
